@@ -68,4 +68,13 @@ public class EmployeeController {
         return modelAndView;
     }
 
+    @PostMapping("/{id}/edit")
+    public ModelAndView editEmployee(@ModelAttribute("employee") Employee employee){
+
+        employeeService.save(employee);
+        ModelAndView modelAndView = new ModelAndView("/employee/edit");
+        modelAndView.addObject("employee", employee);
+        modelAndView.addObject("message", "Update Success!!!!");
+        return modelAndView;
+    }
 }

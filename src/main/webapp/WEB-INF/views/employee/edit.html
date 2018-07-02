@@ -6,9 +6,9 @@
 </head>
 <body>
 <h3>Edit Employee</h3>
-<!--<th:block th:if="${message}">-->
-    <!--<h6 th:text="${message}"></h6>-->
-<!--</th:block>-->
+<th:block th:if="${message}">
+    <h6 th:text="${message}"></h6>
+</th:block>
 <form th:action="@{/employees/__${employee.employee_id}__/edit}" method="post" th:object="${employee}">
     <input type="hidden" th:field="*{employee_id}">
     <div>
