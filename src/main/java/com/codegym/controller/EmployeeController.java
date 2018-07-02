@@ -30,4 +30,11 @@ public class EmployeeController {
         return modelAndView;
     }
 
+    @GetMapping("/create")
+    public ModelAndView showCreateForm(){
+
+        ModelAndView modelAndView = new ModelAndView("/employee/create");
+        modelAndView.addObject("employee", new Employee());
+        return modelAndView;
+    }
 }
