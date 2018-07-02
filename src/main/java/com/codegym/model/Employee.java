@@ -1,6 +1,7 @@
 package com.codegym.model;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.time.LocalDate;
 
 @Entity
@@ -13,7 +14,7 @@ public class Employee {
 
     private String employee_name;
     private boolean gender;
-    private LocalDate day_of_birth;
+    private Date day_of_birth;
     private String phone_number;
     private String employee_idcard;
     private String employee_email;
@@ -26,7 +27,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String employee_name, boolean gender, LocalDate day_of_birth, String phone_number, String employee_idcard, String employee_email, String employee_address, GroupEmployee groupEmployee) {
+    public Employee(String employee_name, boolean gender, Date day_of_birth, String phone_number, String employee_idcard, String employee_email, String employee_address, GroupEmployee groupEmployee) {
         this.employee_name = employee_name;
         this.gender = gender;
         this.day_of_birth = day_of_birth;
@@ -61,11 +62,11 @@ public class Employee {
         this.gender = gender;
     }
 
-    public LocalDate getDay_of_birth() {
+    public Date getDay_of_birth() {
         return day_of_birth;
     }
 
-    public void setDay_of_birth(LocalDate day_of_birth) {
+    public void setDay_of_birth(Date day_of_birth) {
         this.day_of_birth = day_of_birth;
     }
 

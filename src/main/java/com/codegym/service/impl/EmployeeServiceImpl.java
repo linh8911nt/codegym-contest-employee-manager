@@ -22,4 +22,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Page<Employee> findAllEmployee(Pageable pageable) {
         return employeeRepository.findAll(pageable);
     }
+
+    @Override
+    public Employee save(Employee employee) {
+        return employeeRepository.save(employee);
+    }
 }

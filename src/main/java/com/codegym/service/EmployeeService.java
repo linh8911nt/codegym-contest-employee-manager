@@ -7,4 +7,6 @@ import org.springframework.data.domain.Pageable;
 public interface EmployeeService {
 
     Page<Employee> findAllEmployee(Pageable pageable);
+
+    Employee save(Employee employee);
 }

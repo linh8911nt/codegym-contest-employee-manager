@@ -1,5 +1,7 @@
 package com.codegym.config;
 
+import com.codegym.formatter.GroupEmployeeFormatter;
+import com.codegym.service.GroupEmployeeService;
 import nz.net.ultraq.thymeleaf.LayoutDialect;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -61,10 +63,10 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         this.applicationContext = applicationContext;
     }
 
-//    @Override
-//    public void addFormatters(FormatterRegistry registry){
-//        registry.addFormatter(new CategoryFormatter(applicationContext.getBean(CategoryService.class)));
-//    }
+    @Override
+    public void addFormatters(FormatterRegistry registry){
+        registry.addFormatter(new GroupEmployeeFormatter(applicationContext.getBean(GroupEmployeeService.class)));
+    }
 
 //    @Bean
 //    public CommonsMultipartResolver multipartResolver(){
