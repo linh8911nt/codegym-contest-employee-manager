@@ -71,3 +71,4 @@ gradle-app.setting
 gradlew
 gradlew.bat
 settings.gradle
+.idea/.name
