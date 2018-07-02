@@ -8,5 +8,8 @@ public interface EmployeeService {
 
     Page<Employee> findAllEmployee(Pageable pageable);
 
+    Employee findById(Long id);
+
     Employee save(Employee employee);
+
 }
