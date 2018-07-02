@@ -1,10 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Edit Employee</title>
 </head>
 <body>
-
+<h3>Edit Employee</h3>
+<!--<th:block th:if="${message}">-->
+    <!--<h6 th:text="${message}"></h6>-->
+<!--</th:block>-->
+<form th:action="@{/employees/__${employee.employee_id}__/edit}" method="post" th:object="${employee}">
+    <input type="hidden" th:field="*{employee_id}">
+    <div>
+        <label>Họ Tên: </label>
+        <input type="text" th:field="*{employee_name}">
+    </div>
+    <div>
+        <label>Giới tính: </label>
+        <label>Nam </label>
+        <input type="radio" th:field="*{gender}" value="1">
+        <label>Nữ </label>
+        <input type="radio" th:field="*{gender}" value="0">
+    </div>
+    <div>
+        <label>Ngày sinh: </label>
+        <input type="date" th:field="*{day_of_birth}">
+    </div>
+    <div>
+        <label>Số điện thoại: </label>
+        <input type="text" th:field="*{phone_number}">
+    </div>
+    <div>
+        <label>Số CMND: </label>
+        <input type="text" th:field="*{employee_idcard}">
+    </div>
+    <div>
+        <label>Email: </label>
+        <input type="text" th:field="*{employee_email}">
+    </div>
+    <div>
+        <label>Địa chỉ: </label>
+        <input type="text" th:field="*{employee_address}">
+    </div>
+    <div>
+        <label>Group: </label>
+        <select th:field="*{groupEmployee}">
+            <option th:each="group:${groupEmployees}"
+                    th:value="${group.group_employee_id}"
+                    th:text="${group.group_employee_name}"
+                    th:selected="*{groupEmployee.group_employee_name}"></option>
+        </select>
+    </div>
+    <button type="submit">Update</button>
+</form>
 </body>
 </html>
