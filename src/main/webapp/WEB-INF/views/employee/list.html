@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>List Employees</title>
 </head>
 <body>
-
+<table>
+    <tr>
+        <th>Mã Nhân Viên</th>
+        <th>Nhóm Nhân Viên </th>
+        <th>Họ Tên </th>
+        <th>Giới Tính </th>
+        <th>Số Điện Thoại </th>
+        <th>Chức Năng</th>
+    </tr>
+    <tr th:each="employee : ${employees}">
+        <td th:text="${employee.employee_id}"></td>
+        <td th:text="${employee.groupEmployee.group_employee_name}"></td>
+        <td th:text="${employee.employee_name}"></td>
+        <td>
+            <span th:if="${employee.gender}" th:text="Nam"></span>
+            <span th:if="${!employee.gender}" th:text="Nữ"></span>
+        </td>
+        <td th:text="${employee.phone_number}"></td>
+        <td>
+            <a th:href="@{#}">Edit</a>
+            <a th:href="@{#}">Delete</a>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
