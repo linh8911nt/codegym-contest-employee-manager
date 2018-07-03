@@ -77,4 +77,12 @@ public class EmployeeController {
         modelAndView.addObject("message", "Update Success!!!!");
         return modelAndView;
     }
+
+    @PostMapping("/search")
+    public ModelAndView searchEmployee(@RequestParam("txtSearch") String txtSearch){
+        Iterable<Employee> employees = employeeService.findAllByEmployeeName(txtSearch);
+        ModelAndView modelAndView = new ModelAndView("/employee/search");
+        modelAndView.addObject("employees", employees);
+        return modelAndView;
+    }
 }

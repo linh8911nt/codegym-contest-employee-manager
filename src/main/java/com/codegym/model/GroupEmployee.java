@@ -9,10 +9,10 @@ public class GroupEmployee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long group_employee_id;
+    private Long groupEmployeeId;
 
-    private String group_employee_name;
-    private String group_employee_desc;
+    private String groupEmployeeName;
+    private String groupEmployeeDesc;
 
     @OneToMany(targetEntity = Employee.class)
     private List<Employee> employees;
@@ -20,34 +20,34 @@ public class GroupEmployee {
     public GroupEmployee() {
     }
 
-    public GroupEmployee(String group_employee_name, String group_employee_desc, List<Employee> employees) {
-        this.group_employee_name = group_employee_name;
-        this.group_employee_desc = group_employee_desc;
+    public GroupEmployee(String groupEmployeeName, String groupEmployeeDesc, List<Employee> employees) {
+        this.groupEmployeeName = groupEmployeeName;
+        this.groupEmployeeDesc = groupEmployeeDesc;
         this.employees = employees;
     }
 
-    public Long getGroup_employee_id() {
-        return group_employee_id;
+    public Long getGroupEmployeeId() {
+        return groupEmployeeId;
     }
 
-    public void setGroup_employee_id(Long group_employee_id) {
-        this.group_employee_id = group_employee_id;
+    public void setGroupEmployeeId(Long groupEmployeeId) {
+        this.groupEmployeeId = groupEmployeeId;
     }
 
-    public String getGroup_employee_name() {
-        return group_employee_name;
+    public String getGroupEmployeeName() {
+        return groupEmployeeName;
     }
 
-    public void setGroup_employee_name(String group_employee_name) {
-        this.group_employee_name = group_employee_name;
+    public void setGroupEmployeeName(String groupEmployeeName) {
+        this.groupEmployeeName = groupEmployeeName;
     }
 
-    public String getGroup_employee_desc() {
-        return group_employee_desc;
+    public String getGroupEmployeeDesc() {
+        return groupEmployeeDesc;
     }
 
-    public void setGroup_employee_desc(String group_employee_desc) {
-        this.group_employee_desc = group_employee_desc;
+    public void setGroupEmployeeDesc(String groupEmployeeDesc) {
+        this.groupEmployeeDesc = groupEmployeeDesc;
     }
 
     public List<Employee> getEmployees() {

@@ -8,6 +8,8 @@ public interface EmployeeService {
 
     Page<Employee> findAllEmployee(Pageable pageable);
 
+    Iterable<Employee> findAllByEmployeeName(String name);
+
     Employee findById(Long id);
 
     Employee save(Employee employee);

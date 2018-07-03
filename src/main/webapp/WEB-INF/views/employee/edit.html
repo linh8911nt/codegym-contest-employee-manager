@@ -9,11 +9,11 @@
 <th:block th:if="${message}">
     <h6 th:text="${message}"></h6>
 </th:block>
-<form th:action="@{/employees/__${employee.employee_id}__/edit}" method="post" th:object="${employee}">
-    <input type="hidden" th:field="*{employee_id}">
+<form th:action="@{/employees/__${employee.employeeId}__/edit}" method="post" th:object="${employee}">
+    <input type="hidden" th:field="*{employeeId}">
     <div>
         <label>Họ Tên: </label>
-        <input type="text" th:field="*{employee_name}">
+        <input type="text" th:field="*{employeeName}">
     </div>
     <div>
         <label>Giới tính: </label>
@@ -24,31 +24,31 @@
     </div>
     <div>
         <label>Ngày sinh: </label>
-        <input type="date" th:field="*{day_of_birth}">
+        <input type="date" th:field="*{dayOfBirth}">
     </div>
     <div>
         <label>Số điện thoại: </label>
-        <input type="text" th:field="*{phone_number}">
+        <input type="text" th:field="*{phoneNumber}">
     </div>
     <div>
         <label>Số CMND: </label>
-        <input type="text" th:field="*{employee_idcard}">
+        <input type="text" th:field="*{employeeIdcard}">
     </div>
     <div>
         <label>Email: </label>
-        <input type="text" th:field="*{employee_email}">
+        <input type="text" th:field="*{employeeEmail}">
     </div>
     <div>
         <label>Địa chỉ: </label>
-        <input type="text" th:field="*{employee_address}">
+        <input type="text" th:field="*{employeeAddress}">
     </div>
     <div>
         <label>Group: </label>
         <select th:field="*{groupEmployee}">
             <option th:each="group:${groupEmployees}"
-                    th:value="${group.group_employee_id}"
-                    th:text="${group.group_employee_name}"
-                    th:selected="*{groupEmployee.group_employee_name}"></option>
+                    th:value="${group.groupEmployeeId}"
+                    th:text="${group.groupEmployeeName}"
+                    th:selected="*{groupEmployee.groupEmployeeName}"></option>
         </select>
     </div>
     <button type="submit">Update</button>

@@ -24,6 +24,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public Iterable<Employee> findAllByEmployeeName(String name) {
+        return employeeRepository.findEmployeesByEmployeeNameContains(name);
+    }
+
+    @Override
     public Employee findById(Long id) {
         return employeeRepository.findOne(id);
     }

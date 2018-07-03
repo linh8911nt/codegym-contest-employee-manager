@@ -2,13 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>List Employees</title>
+    <title>Result Search</title>
 </head>
 <body>
-<form method="post" th:action="@{/employees/search}">
-    <input name="txtSearch" placeholder="Nhập tên nhân viên">
-    <button type="submit">Search</button>
-</form>
+<h3>Employee was found:</h3>
 <table border="1">
     <tr>
         <th>Mã Nhân Viên</th>
